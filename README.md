@@ -36,5 +36,3 @@ Distribué sous la licence MIT. Voir `LICENSE` pour plus d'informations.
 
 **CyberMentor NLP** - Fait avec ❤️ pour la communauté cybersécurité
 ```
-
-Je vais maintenant créer ce fichier README.md dans votre repository. Souhaitez-vous que j'ajoute également des sections spécifiques ou modifier certains aspects ?
