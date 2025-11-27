@@ -25,14 +25,7 @@ graph TB
     F --> G[Interface Streamlit]
     D --> G
     F --> G
-    
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style F fill:#e0f2f1
-    style G fill:#fff8e1
+
 ```
 
 ## 📄 Licence
