@@ -32,7 +32,4 @@ graph TB
 
 Distribué sous la licence MIT. Voir `LICENSE` pour plus d'informations.
 
----
-
 **CyberMentor NLP** - Fait avec ❤️ pour la communauté cybersécurité
-```
