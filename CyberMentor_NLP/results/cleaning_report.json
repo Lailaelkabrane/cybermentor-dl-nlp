@@ -1,0 +1,31 @@
+{
+  "dataset_info": {
+    "original_shape": [
+      599760,
+      49
+    ],
+    "cleaned_shape": [
+      541728,
+      50
+    ],
+    "correct_label_column": "Label",
+    "attack_rate_percentage": 3.7
+  },
+  "label_distribution": {
+    "normal_count": 577545,
+    "attack_count": 22215,
+    "normal_percentage": 96.3,
+    "attack_percentage": 3.7
+  },
+  "attack_types": {
+    "Generic": 7522,
+    "Exploits": 5409,
+    " Fuzzers": 5051,
+    "Reconnaissance": 1759,
+    "DoS": 1167,
+    "Backdoors": 534,
+    "Analysis": 526,
+    "Shellcode": 223,
+    "Worms": 24
+  }
+}

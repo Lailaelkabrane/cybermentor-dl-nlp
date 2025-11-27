@@ -1,0 +1,31 @@
+{
+  "original_dataset": {
+    "total_samples": 541728,
+    "normal_samples": 527450,
+    "attack_samples": 14278,
+    "imbalance_ratio": 36.941448382126346,
+    "attack_rate_percentage": 2.635640025990903
+  },
+  "balancing_methods": {
+    "undersampling": {
+      "total_samples": 28556,
+      "normal_samples": 14278,
+      "attack_samples": 14278,
+      "balance_ratio": 1.0,
+      "description": "Under-sampling - R\u00e9duit la classe majoritaire"
+    },
+    "class_weights": {
+      "class_weights": {
+        "0": 0.5135349322210636,
+        "1": 18.970724191063173
+      },
+      "description": "Poids de classes - P\u00e9nalise plus les erreurs sur la classe minoritaire"
+    }
+  },
+  "recommendations": {
+    "for_large_datasets": "SMOTE (conserve toute l'information)",
+    "for_speed": "Under-sampling (plus rapide)",
+    "for_deep_learning": "Class Weights (pas de modification des donn\u00e9es)",
+    "warning": "SMOTE peut cr\u00e9er du bruit avec des donn\u00e9es tr\u00e8s d\u00e9s\u00e9quilibr\u00e9es"
+  }
+}

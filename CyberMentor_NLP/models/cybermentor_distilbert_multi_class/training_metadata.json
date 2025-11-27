@@ -1,0 +1,48 @@
+{
+  "model_type": "multi_class",
+  "num_classes": 10,
+  "training_time_seconds": 363.38092851638794,
+  "final_accuracy": 0.542,
+  "final_loss": 1.3170563727617264,
+  "category_mapping": {
+    "id_to_category": {
+      "0": " Fuzzers",
+      "1": "Analysis",
+      "2": "Backdoors",
+      "3": "DoS",
+      "4": "Exploits",
+      "5": "Generic",
+      "6": "Reconnaissance",
+      "7": "Shellcode",
+      "8": "Worms",
+      "9": "unknown"
+    },
+    "category_to_id": {
+      " Fuzzers": 0,
+      "Analysis": 1,
+      "Backdoors": 2,
+      "DoS": 3,
+      "Exploits": 4,
+      "Generic": 5,
+      "Reconnaissance": 6,
+      "Shellcode": 7,
+      "Worms": 8,
+      "unknown": 9
+    }
+  },
+  "training_samples": 1000,
+  "epochs": 2,
+  "batch_size": 64,
+  "label_distribution": {
+    "9": 510,
+    "4": 148,
+    "0": 136,
+    "5": 79,
+    "6": 66,
+    "3": 26,
+    "1": 14,
+    "7": 10,
+    "2": 10,
+    "8": 1
+  }
+}

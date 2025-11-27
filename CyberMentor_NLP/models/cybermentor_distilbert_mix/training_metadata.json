@@ -1,0 +1,8 @@
+{
+  "model": "distilbert-base-uncased",
+  "num_labels": 10,
+  "epoch_saved": 2,
+  "val_acc": 0.5983263598326359,
+  "batch_size": 16,
+  "max_length": 128
+}

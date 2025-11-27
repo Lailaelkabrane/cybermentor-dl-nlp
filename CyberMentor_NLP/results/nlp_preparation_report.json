@@ -1,0 +1,97 @@
+{
+  "total_samples": 28556,
+  "train_samples": 19989,
+  "val_samples": 4283,
+  "test_samples": 4284,
+  "classification_type": "multi_class",
+  "class_distribution": {
+    "train": {
+      "0": 9995,
+      "1": 9994
+    },
+    "val": {
+      "1": 2142,
+      "0": 2141
+    },
+    "test": {
+      "1": 2142,
+      "0": 2142
+    }
+  },
+  "text_feature_stats": {
+    "average_words_per_sample": 8.464055230376708,
+    "average_chars_per_sample": 165.54675071289208,
+    "vocabulary_size": 529,
+    "feature_quality": "HIGH"
+  },
+  "feature_engineering": {
+    "technical_features_included": true,
+    "behavioral_patterns_included": true,
+    "traffic_analysis_included": true,
+    "attack_context_included": true
+  },
+  "multi_class_categories": {
+    "id_to_category": {
+      "0": " Fuzzers",
+      "1": "Analysis",
+      "2": "Backdoors",
+      "3": "DoS",
+      "4": "Exploits",
+      "5": "Generic",
+      "6": "Reconnaissance",
+      "7": "Shellcode",
+      "8": "Worms",
+      "9": "unknown"
+    },
+    "category_to_id": {
+      " Fuzzers": 0,
+      "Analysis": 1,
+      "Backdoors": 2,
+      "DoS": 3,
+      "Exploits": 4,
+      "Generic": 5,
+      "Reconnaissance": 6,
+      "Shellcode": 7,
+      "Worms": 8,
+      "unknown": 9
+    }
+  },
+  "attack_category_distribution": {
+    "train": {
+      "unknown": 9995,
+      "Exploits": 2829,
+      " Fuzzers": 2794,
+      "Generic": 1983,
+      "Reconnaissance": 1218,
+      "DoS": 577,
+      "Analysis": 211,
+      "Backdoors": 209,
+      "Shellcode": 156,
+      "Worms": 17
+    },
+    "val": {
+      "unknown": 2141,
+      "Exploits": 606,
+      " Fuzzers": 598,
+      "Generic": 425,
+      "Reconnaissance": 261,
+      "DoS": 124,
+      "Backdoors": 45,
+      "Analysis": 45,
+      "Shellcode": 34,
+      "Worms": 4
+    },
+    "test": {
+      "unknown": 2142,
+      "Exploits": 607,
+      " Fuzzers": 599,
+      "Generic": 425,
+      "Reconnaissance": 261,
+      "DoS": 124,
+      "Backdoors": 45,
+      "Analysis": 45,
+      "Shellcode": 33,
+      "Worms": 3
+    }
+  }
+}

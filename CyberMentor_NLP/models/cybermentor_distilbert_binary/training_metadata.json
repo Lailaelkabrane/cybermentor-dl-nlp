@@ -1,0 +1,15 @@
+{
+  "model_type": "binary",
+  "num_classes": 2,
+  "training_time_seconds": 464.43984723091125,
+  "final_accuracy": 0.896,
+  "final_loss": 0.28404761850833893,
+  "category_mapping": null,
+  "training_samples": 1000,
+  "epochs": 2,
+  "batch_size": 64,
+  "label_distribution": {
+    "0": 510,
+    "1": 490
+  }
+}
