@@ -1,0 +1,281 @@
+[
+  {
+    "id": "attack_001",
+    "attack_type": "Generic",
+    "description": "Attaques génériques qui peuvent viser différents systèmes sans ciblage spécifique.",
+    "indicators": ["trafic anormal", "logs inhabituels", "comportement système inhabituel"],
+    "mitigation_recommendations": [
+      {
+        "recommendation": "Déployer un pare-feu next-génération avec inspection approfondie des paquets",
+        "implementation": "Configurer des règles strictes entrantes/sortantes, bloquer les ports non essentiels, inspection SSL",
+        "priority": "High",
+        "source": "NIST SP 800-41",
+        "source_detail": "Guidelines on Firewalls and Firewall Policy"
+      },
+      {
+        "recommendation": "Implémenter un système IDS/IPS avec signatures mises à jour",
+        "implementation": "Surveillance temps réel du trafic réseau, alertes sur patterns suspects, blocage automatique",
+        "priority": "High",
+        "source": "MITRE ATT&CK",
+        "source_detail": "Mitigation ID: M1031"
+      },
+      {
+        "recommendation": "Centraliser les logs avec un SIEM pour corrélation et analyse",
+        "implementation": "Collecte logs systèmes, réseaux, applications; règles de corrélation; alertes automatiques",
+        "priority": "Medium",
+        "source": "CIS Control 6",
+        "source_detail": "Maintenance, Monitoring, and Analysis of Audit Logs"
+      }
+    ],
+    "defense_layers": ["Network", "Monitoring", "Prevention"],
+    "source": "MITRE ATT&CK"
+  },
+  {
+    "id": "attack_002",
+    "attack_type": "Exploits",
+    "description": "Exploitation de vulnérabilités dans le logiciel ou le système pour exécuter du code malveillant.",
+    "indicators": ["tentatives de connexion inhabituelles", "crash d'application", "utilisation mémoire anormale"],
+    "mitigation_recommendations": [
+      {
+        "recommendation": "Programme formel de gestion des correctifs avec délais définis",
+        "implementation": "Correctifs critiques sous 30 jours, correctifs importants sous 60 jours, tests pré-production",
+        "priority": "Critical",
+        "source": "CIS Control 3",
+        "source_detail": "Continuous Vulnerability Management"
+      },
+      {
+        "recommendation": "Authentification multi-facteur sur tous les accès sensibles",
+        "implementation": "MFA obligatoire pour VPN, RDP, SSH, accès administrateurs, interfaces web critiques",
+        "priority": "High",
+        "source": "MITRE ATT&CK",
+        "source_detail": "Mitigation ID: M1032"
+      },
+      {
+        "recommendation": "Segmentation réseau avec zones de sécurité distinctes",
+        "implementation": "DMZ, réseau données sensibles, réseau utilisateurs, micro-segmentation selon besoins métier",
+        "priority": "High",
+        "source": "NIST SP 800-82",
+        "source_detail": "Guide to Industrial Control Systems Security"
+      }
+    ],
+    "defense_layers": ["Application", "Access Control", "Network"],
+    "source": "MITRE ATT&CK"
+  },
+  {
+    "id": "attack_003",
+    "attack_type": "Fuzzers",
+    "description": "Tests de fuzzing visant à découvrir des failles dans le logiciel en envoyant des données aléatoires.",
+    "indicators": ["crash répétés d'applications", "erreurs de validation", "requêtes malformées"],
+    "mitigation_recommendations": [
+      {
+        "recommendation": "Validation stricte des entrées utilisateur avec whitelisting",
+        "implementation": "Validation côté serveur, limites de taille, filtrage par expressions régulières, sanitisation",
+        "priority": "High",
+        "source": "OWASP",
+        "source_detail": "Input Validation Cheat Sheet"
+      },
+      {
+        "recommendation": "Sandboxing des applications critiques",
+        "implementation": "Isolation des processus, restrictions d'accès système, confinement des applications",
+        "priority": "Medium",
+        "source": "NIST SP 800-167",
+        "source_detail": "Guide to Application Whitelisting"
+      },
+      {
+        "recommendation": "Tests de sécurité lors du développement (SAST/DAST)",
+        "implementation": "Analyse code statique/dynamique, tests de fuzzing internes, revues de sécurité",
+        "priority": "Medium",
+        "source": "NIST SP 800-160",
+        "source_detail": "Systems Security Engineering"
+      }
+    ],
+    "defense_layers": ["Application", "Development", "Runtime"],
+    "source": "NIST SP 800-61"
+  },
+  {
+    "id": "attack_004",
+    "attack_type": "Reconnaissance",
+    "description": "Collecte d'informations sur le réseau et les systèmes cibles pour préparer une attaque.",
+    "indicators": ["scans de ports répétés", "requêtes DNS inhabituelles", "enumération de services"],
+    "mitigation_recommendations": [
+      {
+        "recommendation": "Limitation de l'exposition des services sur Internet",
+        "implementation": "Services non essentiels en interne uniquement, VPN pour accès distant, reverse proxy",
+        "priority": "High",
+        "source": "CIS Control 9",
+        "source_detail": "Limitation and Control of Network Ports"
+      },
+      {
+        "recommendation": "Filtrage IP géographique et réputation",
+        "implementation": "Bloquer pays à risque, listes noires IPs connues, rate limiting par IP",
+        "priority": "Medium",
+        "source": "MITRE ATT&CK",
+        "source_detail": "Mitigation ID: M1035"
+      },
+      {
+        "recommendation": "Surveillance active des tentatives de reconnaissance",
+        "implementation": "Alertes sur scans réseau, monitoring des logs DNS, détection d'enumération",
+        "priority": "Medium",
+        "source": "NIST SP 800-61",
+        "source_detail": "Computer Security Incident Handling Guide"
+      }
+    ],
+    "defense_layers": ["Network", "Monitoring", "Access Control"],
+    "source": "MITRE ATT&CK"
+  },
+  {
+    "id": "attack_005",
+    "attack_type": "DoS",
+    "description": "Déni de service visant à saturer les ressources du système ou du réseau.",
+    "indicators": ["trafic réseau massif anormal", "utilisation CPU à 100%", "mémoire saturée"],
+    "mitigation_recommendations": [
+      {
+        "recommendation": "Service anti-DDoS avec scrubbing center",
+        "implementation": "Redirection trafic vers centre de nettoyage, filtrage patterns DDoS, anycast DNS",
+        "priority": "Critical",
+        "source": "NIST SP 800-61",
+        "source_detail": "Guide to DDoS Attacks"
+      },
+      {
+        "recommendation": "Rate limiting et traffic shaping",
+        "implementation": "Limites requêtes par seconde, quotas bande passante, priorisation trafic légitime",
+        "priority": "High",
+        "source": "MITRE ATT&CK",
+        "source_detail": "Mitigation ID: M1040"
+      },
+      {
+        "recommendation": "Architecture scalable avec auto-scaling",
+        "implementation": "Load balancers, répartition de charge, ressources cloud élastiques, CDN",
+        "priority": "Medium",
+        "source": "CIS Control 12",
+        "source_detail": "Boundary Defense"
+      }
+    ],
+    "defense_layers": ["Network", "Infrastructure", "Availability"],
+    "source": "MITRE ATT&CK"
+  },
+  {
+    "id": "attack_006",
+    "attack_type": "Backdoors",
+    "description": "Portes dérobées permettant un accès non autorisé aux systèmes compromis.",
+    "indicators": ["processus inconnus", "connexions sortantes inhabituelles", "ports ouverts suspects"],
+    "mitigation_recommendations": [
+      {
+        "recommendation": "Fermeture systématique des ports et services non essentiels",
+        "implementation": "Audit régulier des ports ouverts, désactivation services inutiles, hardening système",
+        "priority": "High",
+        "source": "CIS Control 9",
+        "source_detail": "Limitation and Control of Network Ports"
+      },
+      {
+        "recommendation": "Monitoring comportemental avec EDR",
+        "implementation": "Détection anomalies processus, monitoring activité réseau, analyse comportementale",
+        "priority": "High",
+        "source": "MITRE ATT&CK",
+        "source_detail": "Mitigation ID: M1049"
+      },
+      {
+        "recommendation": "Authentification forte et gestion des accès privilégiés",
+        "implementation": "MFA pour tous les comptes administrateurs, PAM, rotation des credentials",
+        "priority": "High",
+        "source": "CIS Control 5",
+        "source_detail": "Secure Configuration for Hardware and Software"
+      }
+    ],
+    "defense_layers": ["Endpoint", "Access Control", "Monitoring"],
+    "source": "MITRE ATT&CK"
+  },
+  {
+    "id": "attack_007",
+    "attack_type": "Analysis",
+    "description": "Analyse malveillante visant à comprendre et contourner les protections.",
+    "indicators": ["tentatives reverse engineering", "code obfusqué", "analyse outils de sécurité"],
+    "mitigation_recommendations": [
+      {
+        "recommendation": "Obfuscation et protection du code applicatif",
+        "implementation": "Chiffrement binaires, anti-debugging, protection intégrité code, white-box cryptography",
+        "priority": "Medium",
+        "source": "NIST SP 800-111",
+        "source_detail": "Guide to Storage Encryption Technologies"
+      },
+      {
+        "recommendation": "Détection d'anomalies comportementales avancées",
+        "implementation": "ML pour détection patterns analyse, monitoring outils debug, alertes comportement suspect",
+        "priority": "Medium",
+        "source": "MITRE ATT&CK",
+        "source_detail": "Mitigation ID: M1051"
+      },
+      {
+        "recommendation": "Protection des assets critiques et propriété intellectuelle",
+        "implementation": "Chiffrement données sensibles, accès restreint, DLP, watermarking",
+        "priority": "High",
+        "source": "CIS Control 13",
+        "source_detail": "Data Protection"
+      }
+    ],
+    "defense_layers": ["Application", "Data", "Monitoring"],
+    "source": "NIST SP 800-61"
+  },
+  {
+    "id": "attack_008",
+    "attack_type": "Shellcode",
+    "description": "Code d'exploitation injecté dans le système pour exécuter des actions malveillantes.",
+    "indicators": ["exécution code mémoire", "exploits détectés", "comportement process anormal"],
+    "mitigation_recommendations": [
+      {
+        "recommendation": "Prévention exécution données (DEP/NX)",
+        "implementation": "Activer DEP système, marquer pages non-exécutables, protection mémoire hardware",
+        "priority": "High",
+        "source": "MITRE ATT&CK",
+        "source_detail": "Mitigation ID: M1038"
+      },
+      {
+        "recommendation": "Randomisation espace adresses (ASLR)",
+        "implementation": "ASLR système complet, randomisation libraries, randomisation heap/stack",
+        "priority": "High",
+        "source": "NIST SP 800-53",
+        "source_detail": "Security and Privacy Controls"
+      },
+      {
+        "recommendation": "Contrôle intégrité code et exécutables",
+        "implementation": "Whitelisting applications, signatures code, blocage exécutables non signés",
+        "priority": "Medium",
+        "source": "CIS Control 2",
+        "source_detail": "Inventory and Control of Software Assets"
+      }
+    ],
+    "defense_layers": ["Memory", "Application", "System"],
+    "source": "MITRE ATT&CK"
+  },
+  {
+    "id": "attack_009",
+    "attack_type": "Worms",
+    "description": "Vers réseau qui se propagent automatiquement en exploitant des vulnérabilités.",
+    "indicators": ["trafic réseau répétitif", "multiples systèmes infectés", "scans réseau internes"],
+    "mitigation_recommendations": [
+      {
+        "recommendation": "Segmentation réseau stricte avec contrôles d'accès",
+        "implementation": "Micro-segmentation, VLANs séparés, firewall interne, zones d'isolation",
+        "priority": "Critical",
+        "source": "CIS Control 12",
+        "source_detail": "Network Infrastructure Management"
+      },
+      {
+        "recommendation": "Antivirus/EDR avec signatures comportementales",
+        "implementation": "Protection temps réel, analyse comportementale, isolation automatique, mises à jour fréquentes",
+        "priority": "High",
+        "source": "MITRE ATT&CK",
+        "source_detail": "Mitigation ID: M1049"
+      },
+      {
+        "recommendation": "Patch management accéléré pour vulnérabilités propagées",
+        "implementation": "Correctifs sous 48h pour vulnérabilités actives, déploiement d'urgence, rollback plan",
+        "priority": "Critical",
+        "source": "CIS Control 3",
+        "source_detail": "Continuous Vulnerability Management"
+      }
+    ],
+    "defense_layers": ["Network", "Endpoint", "Patching"],
+    "source": "MITRE ATT&CK"
+  }
+]
