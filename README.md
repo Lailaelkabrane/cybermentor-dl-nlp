@@ -13,7 +13,7 @@
 -  **Tableau de bord interactif** pour le monitoring en temps réel
 -  **Déploiement containerisé** facile à installer et maintenir
 
-## 🏗 Architecture du Système
+##  Architecture du Système
 
 ```mermaid
 graph TB
@@ -28,8 +28,7 @@ graph TB
 
 ```
 
-## 📄 Licence
+## Licence
 
 Distribué sous la licence MIT. Voir `LICENSE` pour plus d'informations.
 
-**CyberMentor NLP** - Fait avec ❤️ pour la communauté cybersécurité
